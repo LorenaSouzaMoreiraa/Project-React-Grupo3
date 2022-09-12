@@ -1,7 +1,11 @@
+import Header from "../../components/Header";
 
 function Admin() {
     return (
-        <h1> admin</h1>
+        <div className="app">
+            <Header />
+            <h1> admin</h1>
+        </div>
     )
 }
 
