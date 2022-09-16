@@ -6,7 +6,8 @@
         "idade": "25",
         "peso": "85",
         "altura": "1.75",
-        "foto": "./assets/jogadores/alisson.jpg"
+        "foto": "./assets/jogadores/alisson.jpg",
+        "ativo": true
       },
       {
         "id": 1,
@@ -14,7 +15,8 @@
         "idade": "25",
         "peso": "85",
         "altura": "1.75",
-        "foto": "./assets/jogadores/alisson.jpg"
+        "foto": "./assets/jogadores/alisson.jpg",
+        "ativo": true
       },
       {
         "id": 2,
@@ -22,7 +24,8 @@
         "idade": "25",
         "peso": "85",
         "altura": "1.75",
-        "foto": "./assets/jogadores/alisson.jpg"
+        "foto": "./assets/jogadores/alisson.jpg",
+        "ativo": true
       },
       {
         "id": 3,
@@ -30,7 +33,8 @@
         "idade": "25",
         "peso": "85",
         "altura": "1.75",
-        "foto": "./assets/jogadores/alisson.jpg"
+        "foto": "./assets/jogadores/alisson.jpg",
+        "ativo": true
       },
       {
         "id": 4,
@@ -38,7 +42,8 @@
         "idade": "25",
         "peso": "85",
         "altura": "1.75",
-        "foto": "./assets/jogadores/alisson.jpg"
+        "foto": "./assets/jogadores/alisson.jpg",
+        "ativo": true
       },
       {
         "id": 5,
@@ -46,7 +51,8 @@
         "idade": "25",
         "peso": "85",
         "altura": "1.75",
-        "foto": "./assets/jogadores/alisson.jpg"
+        "foto": "./assets/jogadores/alisson.jpg",
+        "ativo": true
       },
       {
         "id": 6,
@@ -54,7 +60,8 @@
         "idade": "25",
         "peso": "85",
         "altura": "1.75",
-        "foto": "./assets/jogadores/alisson.jpg"
+        "foto": "./assets/jogadores/alisson.jpg",
+        "ativo": true
       },
       {
         "id": 7,
@@ -62,7 +69,8 @@
         "idade": "25",
         "peso": "85",
         "altura": "1.75",
-        "foto": "./assets/jogadores/alisson.jpg"
+        "foto": "./assets/jogadores/alisson.jpg",
+        "ativo": true
       },
       {
         "id": 5,
@@ -70,7 +78,8 @@
         "idade": "25",
         "peso": "85",
         "altura": "1.75",
-        "foto": "./assets/jogadores/alisson.jpg"
+        "foto": "./assets/jogadores/alisson.jpg",
+        "ativo": true
       },
       {
         "id": 8,
@@ -78,7 +87,8 @@
         "idade": "25",
         "peso": "85",
         "altura": "1.75",
-        "foto": "./assets/jogadores/alisson.jpg"
+        "foto": "./assets/jogadores/alisson.jpg",
+        "ativo": true
       },
       {
         "id": 9,
@@ -86,7 +96,8 @@
         "idade": "25",
         "peso": "85",
         "altura": "1.75",
-        "foto": "./assets/jogadores/alisson.jpg"
+        "foto": "./assets/jogadores/alisson.jpg",
+        "ativo": true
       },
       {
         "id": 10,
@@ -94,7 +105,8 @@
         "idade": "25",
         "peso": "85",
         "altura": "1.75",
-        "foto": "./assets/jogadores/alisson.jpg"
+        "foto": "./assets/jogadores/alisson.jpg",
+        "ativo": true
       },
       {
         "id": 11,
@@ -102,7 +114,8 @@
         "idade": "25",
         "peso": "85",
         "altura": "1.75",
-        "foto": "./assets/jogadores/alisson.jpg"
+        "foto": "./assets/jogadores/alisson.jpg",
+        "ativo": true
       },
       {
         "id": 12,
@@ -110,7 +123,8 @@
         "idade": "25",
         "peso": "85",
         "altura": "1.75",
-        "foto": "./assets/jogadores/alisson.jpg"
+        "foto": "./assets/jogadores/alisson.jpg",
+        "ativo": true
       },
       {
         "id": 13,
@@ -118,7 +132,8 @@
         "idade": "25",
         "peso": "85",
         "altura": "1.75",
-        "foto": "./assets/jogadores/alisson.jpg"
+        "foto": "./assets/jogadores/alisson.jpg",
+        "ativo": true
       },
       {
         "id": 14,
@@ -126,7 +141,8 @@
         "idade": "25",
         "peso": "85",
         "altura": "1.75",
-        "foto": "./assets/jogadores/alisson.jpg"
+        "foto": "./assets/jogadores/alisson.jpg",
+        "ativo": true
       },
       {
         "id": 15,
@@ -134,7 +150,8 @@
         "idade": "25",
         "peso": "85",
         "altura": "1.75",
-        "foto": "./assets/jogadores/alisson.jpg"
+        "foto": "./assets/jogadores/alisson.jpg",
+        "ativo": true
       }
     ],
 
@@ -148,7 +165,8 @@
           "cor": 12242,
           "foto": "./assets/times/brasil.png",
           "esporte": 1,
-          "cidade": 0 
+          "cidade": 0 ,
+          "ativo": true
         },
         {
           "id": 1,
@@ -159,7 +177,8 @@
           "cor": 12242,
           "foto": "./assets/times/brasil.png",
           "esporte": 1 ,
-          "cidade": 0 
+          "cidade": 0 ,
+          "ativo": true
         },
         {
           "id": 2,
@@ -170,29 +189,34 @@
           "cor": 12242,
           "foto": "./assets/times/brasil.png",
           "esporte": 1 ,
-          "cidade": 0 
+          "cidade": 0 ,
+          "ativo": true
         }
     ],
 
     "esportes": [
         {
             "id": 0,
-            "nome": "Basquete"
+            "nome": "Basquete",
+            "ativo": true
         },
         {
             "id": 1,
-            "nome": "Futebol"
+            "nome": "Futebol",
+            "ativo": true
         }
     ],  
 
     "cidades": [
         {
             "id": 0,
-            "nome": "São Paulo"
+            "nome": "São Paulo",
+            "ativo": true
         },
         {
             "id": 1,
-            "nome": "Rio de Janeiro"
+            "nome": "Rio de Janeiro",
+            "ativo": true
         }
     ], 
 
@@ -203,7 +227,8 @@
             "idtime": 0,
             "camisa": 0,
             "salario": 20.000,
-            "ano": 2022
+            "ano": 2022,
+            "ativo": true
         },
         {
             "id": 0,
@@ -211,7 +236,8 @@
             "idtime": 0,
             "camisa": 0,
             "salario": 20.000,
-            "ano": 2022
+            "ano": 2022,
+            "ativo": true
         }
     ]
 }
