@@ -1,0 +1,217 @@
+{
+    "jogadores": [
+      {
+        "id": 0,
+        "nome": "Alisson",
+        "idade": "25",
+        "peso": "85",
+        "altura": "1.75",
+        "foto": "./assets/jogadores/alisson.jpg"
+      },
+      {
+        "id": 1,
+        "nome": "Ederson",
+        "idade": "25",
+        "peso": "85",
+        "altura": "1.75",
+        "foto": "./assets/jogadores/alisson.jpg"
+      },
+      {
+        "id": 2,
+        "nome": "Éder Militão",
+        "idade": "25",
+        "peso": "85",
+        "altura": "1.75",
+        "foto": "./assets/jogadores/alisson.jpg"
+      },
+      {
+        "id": 3,
+        "nome": "Marquinhos",
+        "idade": "25",
+        "peso": "85",
+        "altura": "1.75",
+        "foto": "./assets/jogadores/alisson.jpg"
+      },
+      {
+        "id": 4,
+        "nome": "Danilo",
+        "idade": "25",
+        "peso": "85",
+        "altura": "1.75",
+        "foto": "./assets/jogadores/alisson.jpg"
+      },
+      {
+        "id": 5,
+        "nome": "Casemiro",
+        "idade": "25",
+        "peso": "85",
+        "altura": "1.75",
+        "foto": "./assets/jogadores/alisson.jpg"
+      },
+      {
+        "id": 6,
+        "nome": "Fabinho",
+        "idade": "25",
+        "peso": "85",
+        "altura": "1.75",
+        "foto": "./assets/jogadores/alisson.jpg"
+      },
+      {
+        "id": 7,
+        "nome": "Fred",
+        "idade": "25",
+        "peso": "85",
+        "altura": "1.75",
+        "foto": "./assets/jogadores/alisson.jpg"
+      },
+      {
+        "id": 5,
+        "nome": "Philippe Coutinho",
+        "idade": "25",
+        "peso": "85",
+        "altura": "1.75",
+        "foto": "./assets/jogadores/alisson.jpg"
+      },
+      {
+        "id": 8,
+        "nome": "Lucas Paquetá",
+        "idade": "25",
+        "peso": "85",
+        "altura": "1.75",
+        "foto": "./assets/jogadores/alisson.jpg"
+      },
+      {
+        "id": 9,
+        "nome": "Neymar",
+        "idade": "25",
+        "peso": "85",
+        "altura": "1.75",
+        "foto": "./assets/jogadores/alisson.jpg"
+      },
+      {
+        "id": 10,
+        "nome": "Gabriel Jesus",
+        "idade": "25",
+        "peso": "85",
+        "altura": "1.75",
+        "foto": "./assets/jogadores/alisson.jpg"
+      },
+      {
+        "id": 11,
+        "nome": "Antony Richarlison",
+        "idade": "25",
+        "peso": "85",
+        "altura": "1.75",
+        "foto": "./assets/jogadores/alisson.jpg"
+      },
+      {
+        "id": 12,
+        "nome": "Vinícius Jr",
+        "idade": "25",
+        "peso": "85",
+        "altura": "1.75",
+        "foto": "./assets/jogadores/alisson.jpg"
+      },
+      {
+        "id": 13,
+        "nome": "Alex Sandro",
+        "idade": "25",
+        "peso": "85",
+        "altura": "1.75",
+        "foto": "./assets/jogadores/alisson.jpg"
+      },
+      {
+        "id": 14,
+        "nome": "Thiago Silva",
+        "idade": "25",
+        "peso": "85",
+        "altura": "1.75",
+        "foto": "./assets/jogadores/alisson.jpg"
+      },
+      {
+        "id": 15,
+        "nome": "Neymar Jr.",
+        "idade": "25",
+        "peso": "85",
+        "altura": "1.75",
+        "foto": "./assets/jogadores/alisson.jpg"
+      }
+    ],
+
+    "times": [
+        {
+          "id": 0,
+          "nome": "Cruzeiro",
+          "ano": 2002,
+          "verba": 1000,
+          "escudo": "",
+          "cor": 12242,
+          "foto": "./assets/times/brasil.png",
+          "esporte": 1,
+          "cidade": 0 
+        },
+        {
+          "id": 1,
+          "nome": "Atlético",
+          "ano": 2002,
+          "verba": 1000,
+          "escudo": "",
+          "cor": 12242,
+          "foto": "./assets/times/brasil.png",
+          "esporte": 1 ,
+          "cidade": 0 
+        },
+        {
+          "id": 2,
+          "nome": "Palmeiras",
+          "ano": 2002,
+          "verba": 1000,
+          "escudo": "",
+          "cor": 12242,
+          "foto": "./assets/times/brasil.png",
+          "esporte": 1 ,
+          "cidade": 0 
+        }
+    ],
+
+    "esportes": [
+        {
+            "id": 0,
+            "nome": "Basquete"
+        },
+        {
+            "id": 1,
+            "nome": "Futebol"
+        }
+    ],  
+
+    "cidades": [
+        {
+            "id": 0,
+            "nome": "São Paulo"
+        },
+        {
+            "id": 1,
+            "nome": "Rio de Janeiro"
+        }
+    ], 
+
+    "time_jogador": [
+        {
+            "id": 0,
+            "idjogador": 0,
+            "idtime": 0,
+            "camisa": 0,
+            "salario": 20.000,
+            "ano": 2022
+        },
+        {
+            "id": 0,
+            "idjogador": 0,
+            "idtime": 0,
+            "camisa": 0,
+            "salario": 20.000,
+            "ano": 2022
+        }
+    ]
+}
