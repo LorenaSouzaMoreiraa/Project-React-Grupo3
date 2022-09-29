@@ -1,3 +1,5 @@
+import Header from "../../components/Header";
+import "./custom.css"
 
 function Admin() {
   /*
@@ -48,9 +50,24 @@ function Admin() {
     */
 
     return(
-      <div>
-        <h1> Admin testes</h1>
-        <p> EMAIL NOME</p>
+      <div className="app">
+        <Header/> 
+        <div class="container">
+          <div class="row ">
+            <ul class="nav nav-tabs pt-5 " id="myTab" role="tablist">
+              <li class="nav-item " role="presentation">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Jogadores</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Times</button>
+              </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+            </div>
+          </div>
+        </div>
       </div>
     )
 }

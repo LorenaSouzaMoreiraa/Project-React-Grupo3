@@ -1,0 +1,16 @@
+.nav-tabs{
+    border: 0;
+}
+
+.nav-link{
+    color: whitesmoke;
+    font-size: 2.5vh;
+    text-transform: uppercase;
+}
+
+.nav-link.active{
+    background-color: transparent !important;
+    color: var(--primary) !important;
+    border-width: 0 0 4px;
+    border-color: var(--primary);
+}
