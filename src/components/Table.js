@@ -1,10 +1,11 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { alpha } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
@@ -22,7 +23,17 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
 
-const rows = (require("../db.json")).jogadores;
+const rows = (require("../database/db.json")).jogadores;
+
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+    [`&.${tableCellClasses.head}`]: {
+      backgroundColor: theme.palette.common.black,
+      color: theme.palette.common.white,
+    },
+    [`&.${tableCellClasses.body}`]: {
+      fontSize: 14,
+    },
+}));
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -259,11 +270,16 @@ export default function EnhancedTable() {
       <Paper sx={{ width: '100%', mb: 2 }}>
         <EnhancedTableToolbar numSelected={selected.length} />
         <TableContainer>
-          <Table
-            sx={{ minWidth: 750 }}
-            aria-labelledby="tableTitle"
-            size={dense ? 'small' : 'medium'}
-          >
+          <Table stickyHeader aria-label="sticky table">
+          <TableHead>
+            <TableRow>
+                <StyledTableCell>Nome</StyledTableCell>
+                <StyledTableCell align="right">Idade</StyledTableCell>
+                <StyledTableCell align="right">Peso</StyledTableCell>
+                <StyledTableCell align="right">Altura&nbsp;(g)</StyledTableCell>
+                <StyledTableCell align="right">Protein&nbsp;(g)</StyledTableCell>
+            </TableRow>
+          </TableHead>
             <EnhancedTableHead
               numSelected={selected.length}
               order={order}

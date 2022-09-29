@@ -2,28 +2,28 @@
     "jogadores": [
       {
         "id": 0,
-        "nome": "Alisson",
-        "idade": "25",
-        "peso": "85",
-        "altura": "1.75",
+        "nome": "Alisson Ramses Becker",
+        "idade": "29",
+        "peso": "91",
+        "altura": "1.91",
         "foto": "./assets/jogadores/alisson.jpg",
         "ativo": true
       },
       {
         "id": 1,
-        "nome": "Ederson",
-        "idade": "25",
-        "peso": "85",
-        "altura": "1.75",
+        "nome": "Ederson Santana de Moraes",
+        "idade": "29",
+        "peso": "89",
+        "altura": "1.88",
         "foto": "./assets/jogadores/alisson.jpg",
         "ativo": true
       },
       {
         "id": 2,
-        "nome": "Éder Militão",
-        "idade": "25",
-        "peso": "85",
-        "altura": "1.75",
+        "nome": "Éder Gabriel Militão",
+        "idade": "24",
+        "peso": "78",
+        "altura": "1.86",
         "foto": "./assets/jogadores/alisson.jpg",
         "ativo": true
       },
@@ -231,10 +231,10 @@
             "ativo": true
         },
         {
-            "id": 0,
-            "idjogador": 0,
-            "idtime": 0,
-            "camisa": 0,
+            "id": 1,
+            "idjogador": 3,
+            "idtime": 2,
+            "camisa": 20,
             "salario": 20.000,
             "ano": 2022,
             "ativo": true

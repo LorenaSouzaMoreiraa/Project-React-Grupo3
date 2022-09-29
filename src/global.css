@@ -1,0 +1,50 @@
+@font-face {
+    font-family: "Wild World";
+    src: local("Wild World"),
+    url("../public/assets/Wild.otf") format("otf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "PT Sans";
+    src: local("Wild World"),
+    url("../public/assets/PTSans.ttf") format("ttf");
+    font-weight: bold;
+}
+
+:root {
+    --primary: #A381D9;
+    --secondary: #373A59;
+    --auxiliar: #8B77AA;
+}
+
+body{
+    background-color: var(--secondary);
+}
+
+h1, p{
+    color: whitesmoke;
+}
+
+h1{
+    font-size: 12vh;
+    text-transform: lowercase;
+    font-family: "Wild World";
+}
+
+p{
+    font-size: 30px;
+    font-family: "PT Sans";
+}
+
+button{
+    color: whitesmoke;
+    background-color: var(--primary);
+    font-family: "Wild World";
+    font-size: 2vh;
+    padding: 2vh;
+    letter-spacing: 2px;
+    text-transform: lowercase;
+}
+
+

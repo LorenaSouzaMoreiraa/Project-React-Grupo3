@@ -1,0 +1,35 @@
+.login,
+.image {
+  min-height: 100vh;
+}
+
+.bg-image {
+    background-image: url('../../../public/assets/login.png');
+    background-size: cover;
+    background-position: center center;
+}
+
+.title{
+  padding-bottom: 10vh;
+}
+
+label{
+  font-size: 3vh;
+  font-family: "PT Sans";
+  text-transform: uppercase;
+  color:whitesmoke;
+}
+
+.form-control{
+  background-color: transparent;
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: whitesmoke;
+  border-radius: 0px;
+  color: whitesmoke;
+}
+
+input placeholder{
+  font-family: "PT Sans";
+  color: #D9D9D9;
+}
