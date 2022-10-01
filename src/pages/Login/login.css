@@ -20,7 +20,7 @@ label{
   color:whitesmoke;
 }
 
-.form-control{
+.login .form-control{
   background-color: transparent;
   outline: 0;
   border-width: 0 0 2px;

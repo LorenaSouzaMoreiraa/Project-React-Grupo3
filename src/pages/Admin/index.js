@@ -1,5 +1,5 @@
 import Header from "../../components/Header";
-import "./custom.css"
+import "./admin.css"
 
 function Admin() {
   /*
@@ -65,6 +65,23 @@ function Admin() {
             <div class="tab-content" id="myTabContent">
               <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
               <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+            </div>
+          </div>
+
+          <div class="row ">
+            <div class="col-7 text-start">
+              <button type="submit" class=" btn-block border-0 text-uppercase mb-2 shadow-sm">+ Adicionar novo</button>
+            </div>
+            <div class="col-4 text-end">
+              <form class="form-inline">
+                <div class="input-group search">
+                  <input class="form-control  mr-sm-2" type="search" placeholder="Digite o nome do jogador" aria-label="Search"/>
+                  <button class="btn-search" type="submit"><span class="input-group-text" id="basic-addon1"><i class="ri-2x ri-search-fill"></i> </span></button>
+                </div>
+              </form>
+            </div>
+            <div class="col-1 text-end align-self-center">
+              <i class="ri-2x ri-filter-2-fill"></i>
             </div>
           </div>
         </div>

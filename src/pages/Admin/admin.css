@@ -1,0 +1,42 @@
+.nav-tabs{
+    border: 0;
+}
+
+.nav-link{
+    color: whitesmoke;
+    font-size: 2.5vh;
+    text-transform: uppercase;
+}
+
+.nav-link.active{
+    background-color: transparent !important;
+    color: var(--primary) !important;
+    border-width: 0 0 4px;
+    border-color: var(--primary)!important;
+}
+
+.search{
+    border-radius: 50px !important;
+    border:1px solid var(--primary) !important;
+    background-color: transparent !important;
+}
+
+input{
+    background-color: transparent !important;
+    border: 0 !important;
+}
+
+.input-group-text{
+    background-color: transparent;
+    border: 0px;
+}
+
+i{
+    color: var(--primary);
+}
+
+.btn-search{
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+}

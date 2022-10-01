@@ -14,7 +14,7 @@ export default function Header(){
           <p class="name">User</p>
         </li>
       </ul>
-      <div class="navbar-text text-end">
+      <div class="navbar-text header px-3 text-end">
         <i class="ri-2x ri-login-box-fill" width="50" height="50"></i>
       </div>
     </nav>

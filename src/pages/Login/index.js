@@ -1,5 +1,5 @@
 import React from 'react';
-import './custom.css';
+import './login.css';
 
 function Login () {
     return(
@@ -12,7 +12,7 @@ function Login () {
                 <div class="col-md-8">
                     <div class="login d-flex align-items-center py-5">
 
-                        <div class="container">
+                        <div class="container login">
                             <div class="row text-center">
                                 <div class="col-lg-10 col-xl-7 mx-auto">
                                     <h1 class="title">Login</h1>
