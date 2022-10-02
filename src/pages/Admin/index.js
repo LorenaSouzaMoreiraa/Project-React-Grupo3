@@ -1,3 +1,17 @@
+import React, { useState } from 'react';
+import { Modal,
+  ModalHeader,
+  ModalBody,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  Nav,
+  NavItem,
+  NavLink,
+  TabContent,
+  TabPane,
+} from 'reactstrap';
 import Header from "../../components/Header";
 import "./admin.css"
 
@@ -49,41 +63,308 @@ function Admin() {
     )
     */
 
+    const [jogadores, setJogadores] = useState(false);
+    const [times, setTimes] = useState(false);
+
+
+    const showJogadores = () => setJogadores(!jogadores);
+    const showTimes = () => setTimes(!times);
+
+
     return(
       <div className="app">
         <Header/> 
         <div class="container">
-          <div class="row ">
-            <ul class="nav nav-tabs pt-5 " id="myTab" role="tablist">
-              <li class="nav-item " role="presentation">
-                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Jogadores</button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Times</button>
-              </li>
-            </ul>
-            <div class="tab-content" id="myTabContent">
-              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-            </div>
+          <div class="row py-3">
+            <Nav tabs>
+              <NavItem>
+                <NavLink
+                  className="active"
+                  onClick={function noRefCheck(){}}
+                >
+                  Jogadores
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  className=""
+                  onClick={function noRefCheck(){}}
+                >
+                  Times
+                </NavLink>
+              </NavItem>
+            </Nav>
           </div>
 
-          <div class="row ">
-            <div class="col-7 text-start">
-              <button type="submit" class=" btn-block border-0 text-uppercase mb-2 shadow-sm">+ Adicionar novo</button>
-            </div>
-            <div class="col-4 text-end">
-              <form class="form-inline">
-                <div class="input-group search">
-                  <input class="form-control  mr-sm-2" type="search" placeholder="Digite o nome do jogador" aria-label="Search"/>
-                  <button class="btn-search" type="submit"><span class="input-group-text" id="basic-addon1"><i class="ri-2x ri-search-fill"></i> </span></button>
+          <TabContent activeTab="1">
+            <TabPane tabId="1">
+              <div class="row ">
+                <div class="col-7 text-start">
+                  <button onClick={showJogadores} type="button" data-toggle="jogadores" data-target="#jogadores" class=" btn-block border-0 text-uppercase mb-2 shadow-sm">+ Adicionar novo</button>
                 </div>
-              </form>
-            </div>
-            <div class="col-1 text-end align-self-center">
-              <i class="ri-2x ri-filter-2-fill"></i>
-            </div>
-          </div>
+                <div class="col-4 text-end">
+                  <form class="form-inline">
+                    <div class="input-group search">
+                      <input class="form-control  mr-sm-2" type="search" placeholder="Digite o nome do jogador" aria-label="Search"/>
+                      <button class="btn-search" type="submit"><span class="input-group-text" id="basic-addon1"><i class="ri-2x ri-search-fill"></i> </span></button>
+                    </div>
+                  </form>
+                </div>
+                <div class="col-1 text-end align-self-center">
+                  <i class="ri-2x ri-filter-2-fill"></i>
+                </div>
+              </div>
+              
+              <button onClick={showTimes} type="button" data-toggle="jogadores" data-target="#jogadores" class=" btn-block border-0 text-uppercase mb-2 shadow-sm">+ Adicionar novo</button>
+                
+            </TabPane>
+            <TabPane tabId="2">
+              <h1>funciona</h1>
+            </TabPane>
+          </TabContent>
+
+          <Modal isOpen={jogadores} toggle={showJogadores} backdrop={'static'} scrollable={true} size={"lg"}>
+            <ModalHeader toggle={showJogadores}>
+            <h1>Cadastro de Jogadores</h1>
+            </ModalHeader>
+            <ModalBody>
+              <h2><span>Dados jogador</span></h2>
+              <Form>
+                <div class="row cadastro">
+                  <div class="col-8">
+                    <FormGroup>
+                      <Label for="exampleEmail">
+                        Nome
+                      </Label>
+                      <Input
+                        id="exampleEmail"
+                        name="email"
+                        placeholder="with a placeholder"
+                        type="email"
+                      />
+                    </FormGroup>
+                  </div>
+                  <div class="col-4">
+                    <FormGroup>
+                      <Label for="examplePassword">
+                        Imagem
+                      </Label>
+                      <div class="input-group file">
+                        <div class="input-group-prepend">
+                          <button class="btn-search" type="submit"><span class="input-group-text" id="basic-addon1"><i class="ri-2x ri-image-add-fill"></i> </span></button>
+                        </div>
+                        <Input
+                          id="examplePassword"
+                          name="password"
+                          placeholder="password placeholder"
+                          type="password"
+                        />
+                      </div>
+                    </FormGroup>
+                  </div>
+                </div>
+                
+                <div class="row cadastro">
+                  <div class="col-2">
+                    <FormGroup>
+                      <Label for="exampleEmail">
+                        Idade
+                      </Label>
+                      <Input
+                        id="exampleEmail"
+                        name="email"
+                        placeholder="with a placeholder"
+                        type="email"
+                      />
+                    </FormGroup>
+                  </div>
+                  <div class="col-3">
+                    <FormGroup>
+                      <Label for="examplePassword">
+                        Peso
+                      </Label>
+                      <div class="input-group">
+                        <Input
+                          id="examplePassword"
+                          name="password"
+                          placeholder="password placeholder"
+                          type="password"
+                        />
+                        <span class="input-group-text">Kg</span>
+                      </div>
+                    </FormGroup>
+                  </div>
+                  <div class="col-3">
+                    <FormGroup>
+                      <Label for="examplePassword">
+                        Altura
+                      </Label>
+                      <div class="input-group">
+                        <Input
+                          id="examplePassword"
+                          name="password"
+                          placeholder="password placeholder"
+                          type="password"
+                        />
+                        <span class="input-group-text">m</span>
+                      </div>
+                    </FormGroup>
+                  </div>
+                  <div class="col-4 btn-modal text-end align-self-center">
+                    <button onClick={showJogadores} type="button" data-toggle="modal" data-target="#cadastro" class=" btn-block border-0 text-uppercase mb-2 shadow-sm">Salvar</button>
+                  </div>
+                </div>
+
+                <h2><span>Times do jogador</span></h2>
+                
+                <div class="btn-modal text-end align-self-center">
+                    <button onClick={showJogadores} type="button" data-toggle="modal" data-target="#cadastro" class="border-0 text-uppercase mb-2 shadow-sm">+ Adicionar</button>
+                </div>
+              </Form>
+            </ModalBody>
+          </Modal>
+
+          <Modal isOpen={times} toggle={showTimes} backdrop={'static'} scrollable={true} size={"lg"}>
+            <ModalHeader toggle={showTimes}>
+            <h1>Cadastro de Times</h1>
+            </ModalHeader>
+            <ModalBody>
+              <h2><span>Dados do time</span></h2>
+              <Form>
+                <div class="row cadastro">
+                  <div class="col-8">
+                    <FormGroup>
+                      <Label for="exampleEmail">
+                        Nome
+                      </Label>
+                      <Input
+                        id="exampleEmail"
+                        name="email"
+                        placeholder="with a placeholder"
+                        type="email"
+                      />
+                    </FormGroup>
+                  </div>
+                  <div class="col-4">
+                    <FormGroup>
+                      <Label for="examplePassword">
+                        Imagem
+                      </Label>
+                      <div class="input-group file">
+                        <div class="input-group-prepend">
+                          <button class="btn-search" type="submit"><span class="input-group-text" id="basic-addon1"><i class="ri-2x ri-image-add-fill"></i> </span></button>
+                        </div>
+                        <Input
+                          id="examplePassword"
+                          name="password"
+                          placeholder="password placeholder"
+                          type="password"
+                        />
+                      </div>
+                    </FormGroup>
+                  </div>
+                </div>
+                
+                <div class="row cadastro">
+                  <div class="col-3">
+                    <FormGroup>
+                      <Label for="exampleEmail">
+                        Ano de criação
+                      </Label>
+                      <Input
+                        id="exampleEmail"
+                        name="email"
+                        placeholder="with a placeholder"
+                        type="email"
+                      />
+                    </FormGroup>
+                  </div>
+                  <div class="col-5">
+                    <FormGroup>
+                      <Label for="examplePassword">
+                        Cidade
+                      </Label>
+                      <div class="input-group">
+                        <Input
+                          id="examplePassword"
+                          name="password"
+                          placeholder="password placeholder"
+                          type="password"
+                        />
+                      </div>
+                    </FormGroup>
+                  </div>
+                  <div class="col-4 tex-start">
+                    <FormGroup>
+                      <Label for="examplePassword">
+                        Verba mensal
+                      </Label>
+                      <div class="input-group">
+                        <span class="input-group-text">R$</span>
+                        <Input
+                          id="examplePassword"
+                          name="password"
+                          placeholder="password placeholder"
+                          type="password"
+                        />
+                      </div>
+                    </FormGroup>
+                  </div>
+                </div>
+
+                <div class="row cadastro">
+                  <div class="col-6">
+                    <FormGroup>
+                      <Label for="exampleEmail">
+                        Dono
+                      </Label>
+                      <Input
+                        id="exampleEmail"
+                        name="email"
+                        placeholder="with a placeholder"
+                        type="email"
+                      />
+                    </FormGroup>
+                  </div>
+                  <div class="col-3">
+                    <FormGroup>
+                      <Label for="examplePassword">
+                        Esporte
+                      </Label>
+                      <div class="input-group">
+                        <Input
+                          id="examplePassword"
+                          name="password"
+                          placeholder="password placeholder"
+                          type="select"
+                        >
+                          <option>
+                            1
+                          </option>
+                          <option>
+                            2
+                          </option>
+                          <option>
+                            3
+                          </option>
+                        </Input>
+                      </div>
+                    </FormGroup>
+                  </div>
+                  <div class="col-3 btn-modal text-end align-self-center">
+                    <button onClick={showTimes} type="button" data-toggle="modal" data-target="#cadastro" class=" btn-block border-0 text-uppercase mb-2 shadow-sm">Salvar</button>
+                  </div>
+                </div>
+
+                <h2><span>Jogadores do time</span></h2>
+                
+                <div class="btn-modal text-end align-self-center">
+                    <button onClick={showTimes} type="button" data-toggle="modal" data-target="#cadastro" class="border-0 text-uppercase mb-2 shadow-sm">+ Adicionar</button>
+                </div>
+              </Form>
+            </ModalBody>
+          </Modal>
+
         </div>
       </div>
     )
