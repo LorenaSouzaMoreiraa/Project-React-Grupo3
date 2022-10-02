@@ -98,7 +98,37 @@ input{
     background-color: transparent !important;
 }
 
+.search input{
+    border: 0px !important;
+}
+
+.file input{
+    border: 0px !important;
+}
+
+.file .input-group{
+    border: 1px solid var(--auxiliar) !important;
+    border-radius: 50px;
+}
+
 .input-group span{
+    color: whitesmoke;
+}
+.file i{
+    color: whitesmoke;
+}
+
+.file .input-group-prepend button{
+    border: 0px;
+    background-color: var(--auxiliar);
+    border-radius: 50px 0 0 50px ;
+    padding: 1px;
+}
+
+.cadastro .form-select{
+    background-color: var(--auxiliar);
+    border: 1px solid var(--auxiliar);
+    border-radius: 50px;
     color: whitesmoke;
 }
 

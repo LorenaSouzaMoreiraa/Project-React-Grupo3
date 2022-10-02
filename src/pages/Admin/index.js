@@ -78,6 +78,9 @@ function Admin() {
     const toggle = tab => {
         if (currentActiveTab !== tab) setCurrentActiveTab(tab);
     }
+
+    const cidades = (require("../../database/db.json")).cidades;
+    const esportes = (require("../../database/db.json")).esportes;
   
 
     return(
@@ -171,14 +174,14 @@ function Admin() {
                       />
                     </FormGroup>
                   </div>
-                  <div class="col-4">
+                  <div class="col-4 file">
                     <FormGroup>
                       <Label for="examplePassword">
                         Imagem
                       </Label>
                       <div class="input-group file">
                         <div class="input-group-prepend">
-                          <button class="btn-search" type="submit"><span class="input-group-text" id="basic-addon1"><i class="ri-2x ri-image-add-fill"></i> </span></button>
+                          <button type="submit"><span class="input-group-text" id="basic-addon1"><i class="ri-1x ri-image-add-fill"></i> </span></button>
                         </div>
                         <Input
                           id="examplePassword"
@@ -272,14 +275,14 @@ function Admin() {
                       />
                     </FormGroup>
                   </div>
-                  <div class="col-4">
+                  <div class="col-4 file">
                     <FormGroup>
                       <Label for="examplePassword">
                         Imagem
                       </Label>
                       <div class="input-group file">
                         <div class="input-group-prepend">
-                          <button class="btn-search" type="submit"><span class="input-group-text" id="basic-addon1"><i class="ri-2x ri-image-add-fill"></i> </span></button>
+                          <button type="submit"><span class="input-group-text" id="basic-addon1"><i class="ri-1x ri-image-add-fill"></i> </span></button>
                         </div>
                         <Input
                           id="examplePassword"
@@ -316,9 +319,18 @@ function Admin() {
                           id="examplePassword"
                           name="password"
                           placeholder="password placeholder"
-                          type="password"
-                        />
-                      </div>
+                          type="select"
+                        >
+                        {cidades.map((row, index) => {
+                                return (
+                                  <option
+                                  value={row.id}
+                                  >{row.nome}</option>
+                                )
+                            })
+                        };    
+                        </Input>
+                      </div>    
                     </FormGroup>
                   </div>
                   <div class="col-4 tex-start">
@@ -365,15 +377,14 @@ function Admin() {
                           placeholder="password placeholder"
                           type="select"
                         >
-                          <option>
-                            1
-                          </option>
-                          <option>
-                            2
-                          </option>
-                          <option>
-                            3
-                          </option>
+                          {esportes.map((row, index) => {
+                                return (
+                                  <option
+                                  value={row.id}
+                                  >{row.nome}</option>
+                                )
+                            })
+                          };                          
                         </Input>
                       </div>
                     </FormGroup>
