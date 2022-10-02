@@ -29,6 +29,12 @@ label{
   color: whitesmoke;
 }
 
+.login h1{
+  font-size: 12vh;
+  text-transform: lowercase;
+  font-family: "Wild World";
+}
+
 input placeholder{
   font-family: "PT Sans";
   color: #D9D9D9;

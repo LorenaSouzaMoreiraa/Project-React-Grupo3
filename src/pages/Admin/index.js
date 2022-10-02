@@ -13,6 +13,7 @@ import { Modal,
   TabPane,
 } from 'reactstrap';
 import Header from "../../components/Header";
+import classnames from 'classnames';
 import "./admin.css"
 
 function Admin() {
@@ -70,6 +71,14 @@ function Admin() {
     const showJogadores = () => setJogadores(!jogadores);
     const showTimes = () => setTimes(!times);
 
+    // State for current active Tab
+    const [currentActiveTab, setCurrentActiveTab] = useState('1');
+  
+    // Toggle active state for Tab
+    const toggle = tab => {
+        if (currentActiveTab !== tab) setCurrentActiveTab(tab);
+    }
+  
 
     return(
       <div className="app">
@@ -78,17 +87,23 @@ function Admin() {
           <div class="row py-3">
             <Nav tabs>
               <NavItem>
-                <NavLink
-                  className="active"
-                  onClick={function noRefCheck(){}}
+                <NavLink                    
+                  className={classnames({
+                    active:
+                        currentActiveTab === '1'
+                  })}
+                  onClick={() => { toggle('1'); }}
                 >
                   Jogadores
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink
-                  className=""
-                  onClick={function noRefCheck(){}}
+                <NavLink                 
+                  className={classnames({
+                    active:
+                        currentActiveTab === '2'
+                  })}
+                  onClick={() => { toggle('2'); }}
                 >
                   Times
                 </NavLink>
@@ -96,11 +111,11 @@ function Admin() {
             </Nav>
           </div>
 
-          <TabContent activeTab="1">
+          <TabContent activeTab={currentActiveTab}>
             <TabPane tabId="1">
               <div class="row ">
                 <div class="col-7 text-start">
-                  <button onClick={showJogadores} type="button" data-toggle="jogadores" data-target="#jogadores" class=" btn-block border-0 text-uppercase mb-2 shadow-sm">+ Adicionar novo</button>
+                  <button onClick={showJogadores} type="button" data-toggle="jogadores" data-target="#jogadores" class=" btn-block border-0 text-uppercase mb-2 shadow-sm">+ Adicionar jogador</button>
                 </div>
                 <div class="col-4 text-end">
                   <form class="form-inline">
@@ -114,12 +129,24 @@ function Admin() {
                   <i class="ri-2x ri-filter-2-fill"></i>
                 </div>
               </div>
-              
-              <button onClick={showTimes} type="button" data-toggle="jogadores" data-target="#jogadores" class=" btn-block border-0 text-uppercase mb-2 shadow-sm">+ Adicionar novo</button>
-                
             </TabPane>
             <TabPane tabId="2">
-              <h1>funciona</h1>
+              <div class="row ">
+                  <div class="col-7 text-start">
+                    <button onClick={showTimes} type="button" data-toggle="jogadores" data-target="#jogadores" class=" btn-block border-0 text-uppercase mb-2 shadow-sm">+ Adicionar time</button>
+                  </div>
+                  <div class="col-4 text-end">
+                    <form class="form-inline">
+                      <div class="input-group search">
+                        <input class="form-control  mr-sm-2" type="search" placeholder="Digite o nome do jogador" aria-label="Search"/>
+                        <button class="btn-search" type="submit"><span class="input-group-text" id="basic-addon1"><i class="ri-2x ri-search-fill"></i> </span></button>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col-1 text-end align-self-center">
+                    <i class="ri-2x ri-filter-2-fill"></i>
+                  </div>
+                </div>
             </TabPane>
           </TabContent>
 
