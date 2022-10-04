@@ -192,159 +192,157 @@ function Admin() {
             </ModalHeader>
             <ModalBody>
               <h2><span>Dados jogador</span></h2>
-              <Form>
-                <div class="row admin cadastro">
               <Form method="post" id="insert_data" onSubmit={handleSignupJogador}>
-                <div class="row cadastro">
-                  <div class="col-8">
-                    <FormGroup>
-                      <Label>
-                        Nome
-                      </Label>
-                      <Input
-                        name="nome"
-                        placeholder="Nome"
-                        type="text"
-                        required
-                        value={nome}
-                        onChange={(event) => setNome(event.target.value)}
-                      />
-                    </FormGroup>
-                  </div>
-                  <div class="col-4 file">
-                    <FormGroup>
-                      <Label for="examplePassword">
-                        Imagem
-                      </Label>
-                      <div class="input-group file">
-                        <div class="input-group-prepend">
-                          <button type="submit"><span class="input-group-text" id="basic-addon1"><i class="ri-1x ri-image-add-fill"></i> </span></button>
+                  <div class="row admin cadastro">
+                    <div class="col-8">
+                      <FormGroup>
+                        <Label>
+                          Nome
+                        </Label>
+                        <Input
+                          name="nome"
+                          placeholder="Nome"
+                          type="text"
+                          required
+                          value={nome}
+                          onChange={(event) => setNome(event.target.value)}
+                        />
+                      </FormGroup>
+                    </div>
+                    <div class="col-4 file">
+                      <FormGroup>
+                        <Label for="examplePassword">
+                          Imagem
+                        </Label>
+                        <div class="input-group file">
+                          <div class="input-group-prepend">
+                            <button type="submit"><span class="input-group-text" id="basic-addon1"><i class="ri-1x ri-image-add-fill"></i> </span></button>
+                          </div>
+                          <Input
+                            id="examplePassword"
+                            name="password"
+                            placeholder="password placeholder"
+                            type="password"
+                          />
                         </div>
-                        <Input
-                          id="examplePassword"
-                          name="password"
-                          placeholder="password placeholder"
-                          type="password"
-                        />
-                      </div>
-                    </FormGroup>
+                      </FormGroup>
+                    </div>
                   </div>
-                </div>
                 
-                <div class="row admin cadastro">
-                  <div class="col-2">
-                    <FormGroup>
-                      <Label>
-                        Idade
-                      </Label>
-                      <Input
-                        name="idade"
-                        placeholder="Idade"
-                        type="number"
-                        required
-                        value={idade}
-                        onChange={(event) => setIdade(event.target.value)}
-                      />
-                    </FormGroup>
-                  </div>
-                  <div class="col-3">
-                    <FormGroup>
-                      <Label>
-                        Contrato
-                      </Label>
-                      <div>
+                  <div class="row admin cadastro">
+                    <div class="col-2">
+                      <FormGroup>
+                        <Label>
+                          Idade
+                        </Label>
                         <Input
-                          name="contrato"
-                          placeholder="Inicio do Contrato"
+                          name="idade"
+                          placeholder="Idade"
                           type="number"
                           required
-                          value={contrato}
-                          onChange={(event) => setContrato(event.target.value)}
+                          value={idade}
+                          onChange={(event) => setIdade(event.target.value)}
                         />
-                      </div>
-                    </FormGroup>
+                      </FormGroup>
+                    </div>
+                    <div class="col-3">
+                      <FormGroup>
+                        <Label>
+                          Contrato
+                        </Label>
+                        <div>
+                          <Input
+                            name="contrato"
+                            placeholder="Inicio do Contrato"
+                            type="number"
+                            required
+                            value={contrato}
+                            onChange={(event) => setContrato(event.target.value)}
+                          />
+                        </div>
+                      </FormGroup>
+                    </div>
+                    <div class="col-3">
+                      <FormGroup>
+                        <Label>
+                          Camisa
+                        </Label>
+                        <div>
+                          <Input
+                            name="camisa"
+                            placeholder="Camisa"
+                            type="number"
+                            required
+                            value={camisa}
+                            onChange={(event) => setCamisa(event.target.value)}
+                          />
+                        </div>
+                      </FormGroup>
+                    </div>
+                    <div class="col-3">
+                      <FormGroup>
+                        <Label>
+                          Peso
+                        </Label>
+                        <div class="input-group">
+                          <Input
+                            name="peso"
+                            placeholder="Peso"
+                            type="number"
+                            required
+                            value={peso}
+                            onChange={(event) => setPeso(event.target.value)}
+                          />
+                          <span class="input-group-text">Kg</span>
+                        </div>
+                      </FormGroup>
+                    </div>
+                    <div class="col-3">
+                      <FormGroup>
+                        <Label>
+                          Salário
+                        </Label>
+                        <div class="input-group">
+                        <span class="input-group-text">R$</span>
+                          <Input
+                            name="salario"
+                            placeholder="Salario"
+                            type="number"
+                            required
+                            value={salario}
+                            onChange={(event) => setSalario(event.target.value)}
+                          />
+                        </div>
+                      </FormGroup>
+                    </div>
+                    <div class="col-3">
+                      <FormGroup>
+                        <Label for="examplePassword">
+                          Altura
+                        </Label>
+                        <div class="input-group">
+                          <Input
+                            name="altura"
+                            placeholder="Altura"
+                            type="number"
+                            required
+                            value={altura}
+                            onChange={(event) => setAltura(event.target.value)}
+                          />
+                          <span class="input-group-text">m</span>
+                        </div>
+                      </FormGroup>
+                    </div>
+                    <div class="col-4 btn-modal text-end align-self-center">
+                      <button onClick={showJogadores} type="button" data-toggle="modal" data-target="#cadastro" class=" btn-block border-0 text-uppercase mb-2 shadow-sm">Salvar</button>
+                    </div>
                   </div>
-                  <div class="col-3">
-                    <FormGroup>
-                      <Label>
-                        Camisa
-                      </Label>
-                      <div>
-                        <Input
-                          name="camisa"
-                          placeholder="Camisa"
-                          type="number"
-                          required
-                          value={camisa}
-                          onChange={(event) => setCamisa(event.target.value)}
-                        />
-                      </div>
-                    </FormGroup>
-                  </div>
-                  <div class="col-3">
-                    <FormGroup>
-                      <Label>
-                        Peso
-                      </Label>
-                      <div class="input-group">
-                        <Input
-                          name="peso"
-                          placeholder="Peso"
-                          type="number"
-                          required
-                          value={peso}
-                          onChange={(event) => setPeso(event.target.value)}
-                        />
-                        <span class="input-group-text">Kg</span>
-                      </div>
-                    </FormGroup>
-                  </div>
-                  <div class="col-3">
-                    <FormGroup>
-                      <Label>
-                        Salário
-                      </Label>
-                      <div class="input-group">
-                      <span class="input-group-text">R$</span>
-                        <Input
-                          name="salario"
-                          placeholder="Salario"
-                          type="number"
-                          required
-                          value={salario}
-                          onChange={(event) => setSalario(event.target.value)}
-                        />
-                      </div>
-                    </FormGroup>
-                  </div>
-                  <div class="col-3">
-                    <FormGroup>
-                      <Label for="examplePassword">
-                        Altura
-                      </Label>
-                      <div class="input-group">
-                        <Input
-                          name="altura"
-                          placeholder="Altura"
-                          type="number"
-                          required
-                          value={altura}
-                          onChange={(event) => setAltura(event.target.value)}
-                        />
-                        <span class="input-group-text">m</span>
-                      </div>
-                    </FormGroup>
-                  </div>
-                  <div class="col-4 btn-modal text-end align-self-center">
-                    <button onClick={showJogadores} type="button" data-toggle="modal" data-target="#cadastro" class=" btn-block border-0 text-uppercase mb-2 shadow-sm">Salvar</button>
-                  </div>
-                </div>
 
-                <h2><span>Times do jogador</span></h2>
+                  <h2><span>Times do jogador</span></h2>
                 
-                <div class="btn-modal text-end align-self-center">
-                    <button onClick={showJogadores} type="button" data-toggle="modal" data-target="#cadastro" class="border-0 text-uppercase mb-2 shadow-sm">+ Adicionar</button>
-                </div>
+                  <div class="btn-modal text-end align-self-center">
+                      <button onClick={showJogadores} type="button" data-toggle="modal" data-target="#cadastro" class="border-0 text-uppercase mb-2 shadow-sm">+ Adicionar</button>
+                  </div>
               </Form>
             </ModalBody>
           </Modal>
@@ -355,10 +353,8 @@ function Admin() {
             </ModalHeader>
             <ModalBody>
               <h2><span>Dados do time</span></h2>
-              <Form>
-                <div class="row admin cadastro">
               <Form onSubmit={handleSignupTime}>
-                <div class="row cadastro">
+                <div class="row admin cadastro">
                   <div class="col-8">
                     <FormGroup>
                       <Label>
