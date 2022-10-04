@@ -18,11 +18,8 @@ export function nameJogador(name){
     return correspondencias;
 }
 
-export function times_jogador(id){
-    var correspondencias = [];
-    
+export function idJogador(id){
     for(var i = 0; i < data.length; i++)
-        if((data[i].time === name || data[i].nome.search(name)>0) && data[i].ativo )
-            correspondencias.push(data[i]);
-    return correspondencias;
+        if(data[i].id === id  && data[i].ativo )
+            return data[i];
 }
