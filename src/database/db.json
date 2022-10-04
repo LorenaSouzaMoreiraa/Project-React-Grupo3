@@ -2,11 +2,11 @@
     "jogadores": [
       {
         "id": 0,
+        "foto": "./assets/jogadores/alisson.jpg",
         "nome": "Alisson Ramses Becker",
         "idade": "29",
         "peso": "91",
         "altura": "1.91",
-        "foto": "./assets/jogadores/alisson.jpg",
         "ativo": true
       },
       {
@@ -204,6 +204,16 @@
             "id": 1,
             "nome": "Futebol",
             "ativo": true
+        },
+        {
+            "id": 2,
+            "nome": "Tênis de mesa",
+            "ativo": true
+        },
+        {
+            "id": 3,
+            "nome": "Volêi",
+            "ativo": true
         }
     ],  
 
@@ -217,7 +227,17 @@
             "id": 1,
             "nome": "Rio de Janeiro",
             "ativo": true
-        }
+        },
+        {
+            "id": 2,
+            "nome": "Ipatinga",
+            "ativo": true
+        },
+        {
+          "id": 3,
+          "nome": "Belo Horizonte",
+          "ativo": true
+      }
     ], 
 
     "time_jogador": [

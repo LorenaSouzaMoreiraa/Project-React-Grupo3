@@ -15,6 +15,9 @@ import { Modal,
 import Header from "../../components/Header";
 import classnames from 'classnames';
 import "./admin.css"
+import DataTable from '../../components/Table';
+
+//import {nameJogador} from '../../database/jogadores';
 
 function Admin() {
   /*
@@ -82,11 +85,12 @@ function Admin() {
     const cidades = (require("../../database/db.json")).cidades;
     const esportes = (require("../../database/db.json")).esportes;
   
+    //console.log( nameJogador("Fred"));
 
     return(
       <div className="app">
         <Header/> 
-        <div class="container">
+        <div class="container admin">
           <div class="row py-3">
             <Nav tabs>
               <NavItem>
@@ -114,6 +118,7 @@ function Admin() {
             </Nav>
           </div>
 
+              
           <TabContent activeTab={currentActiveTab}>
             <TabPane tabId="1">
               <div class="row ">
@@ -132,24 +137,25 @@ function Admin() {
                   <i class="ri-2x ri-filter-2-fill"></i>
                 </div>
               </div>
+              <DataTable type={1}></DataTable>
             </TabPane>
             <TabPane tabId="2">
               <div class="row ">
-                  <div class="col-7 text-start">
-                    <button onClick={showTimes} type="button" data-toggle="jogadores" data-target="#jogadores" class=" btn-block border-0 text-uppercase mb-2 shadow-sm">+ Adicionar time</button>
-                  </div>
-                  <div class="col-4 text-end">
-                    <form class="form-inline">
-                      <div class="input-group search">
-                        <input class="form-control  mr-sm-2" type="search" placeholder="Digite o nome do jogador" aria-label="Search"/>
-                        <button class="btn-search" type="submit"><span class="input-group-text" id="basic-addon1"><i class="ri-2x ri-search-fill"></i> </span></button>
-                      </div>
-                    </form>
-                  </div>
-                  <div class="col-1 text-end align-self-center">
-                    <i class="ri-2x ri-filter-2-fill"></i>
-                  </div>
+                <div class="col-7 text-start">
+                  <button onClick={showTimes} type="button" data-toggle="jogadores" data-target="#jogadores" class=" btn-block border-0 text-uppercase mb-2 shadow-sm">+ Adicionar time</button>
                 </div>
+                <div class="col-4 text-end">
+                  <form class="form-inline">
+                    <div class="input-group search">
+                      <input class="form-control  mr-sm-2" type="search" placeholder="Digite o nome do time" aria-label="Search"/>
+                      <button class="btn-search" type="submit"><span class="input-group-text" id="basic-addon1"><i class="ri-2x ri-search-fill"></i> </span></button>
+                    </div>
+                  </form>
+                </div>
+                <div class="col-1 text-end align-self-center">
+                  <i class="ri-2x ri-filter-2-fill"></i>
+                </div>
+              </div>
             </TabPane>
           </TabContent>
 
@@ -160,7 +166,7 @@ function Admin() {
             <ModalBody>
               <h2><span>Dados jogador</span></h2>
               <Form>
-                <div class="row cadastro">
+                <div class="row admin cadastro">
                   <div class="col-8">
                     <FormGroup>
                       <Label for="exampleEmail">
@@ -194,7 +200,7 @@ function Admin() {
                   </div>
                 </div>
                 
-                <div class="row cadastro">
+                <div class="row admin cadastro">
                   <div class="col-2">
                     <FormGroup>
                       <Label for="exampleEmail">
@@ -261,7 +267,7 @@ function Admin() {
             <ModalBody>
               <h2><span>Dados do time</span></h2>
               <Form>
-                <div class="row cadastro">
+                <div class="row admin cadastro">
                   <div class="col-8">
                     <FormGroup>
                       <Label for="exampleEmail">
@@ -295,7 +301,7 @@ function Admin() {
                   </div>
                 </div>
                 
-                <div class="row cadastro">
+                <div class="row admin cadastro">
                   <div class="col-3">
                     <FormGroup>
                       <Label for="exampleEmail">
@@ -304,8 +310,8 @@ function Admin() {
                       <Input
                         id="exampleEmail"
                         name="email"
-                        placeholder="with a placeholder"
-                        type="email"
+                        placeholder="1999"
+                        type="number"
                       />
                     </FormGroup>
                   </div>
@@ -351,7 +357,7 @@ function Admin() {
                   </div>
                 </div>
 
-                <div class="row cadastro">
+                <div class="row admin cadastro">
                   <div class="col-6">
                     <FormGroup>
                       <Label for="exampleEmail">

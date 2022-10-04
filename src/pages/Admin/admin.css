@@ -28,7 +28,7 @@
     background-color: transparent !important;
 }
 
-input{
+.admin input{
     background-color: transparent !important;
     border: 0 !important;
 }
@@ -91,7 +91,7 @@ span{
     color:whitesmoke;
 }
 
-input{
+.admin input{
     color: whitesmoke  !important;
     border-radius: 50px !important;
     border:1px solid var(--primary) !important;
