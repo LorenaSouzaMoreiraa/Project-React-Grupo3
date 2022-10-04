@@ -81,7 +81,32 @@ function Admin() {
 
     const cidades = (require("../../database/db.json")).cidades;
     const esportes = (require("../../database/db.json")).esportes;
-  
+
+    const [nome, setNome] = useState('');
+    const [idade, setIdade] = useState('');
+    const [contrato, setContrato] = useState('');
+    const [camisa, setCamisa] = useState('');
+    const [peso, setPeso] = useState('');
+    const [salario, setSalario] = useState('');
+    const [altura, setAltura] = useState('');
+
+    const [nometime, setNomeTime] = useState('');
+    const [anotime, setAnoTime] = useState('');
+    const [verba, setVerba] = useState('');
+    const [cadastrados, setCadastrados] = useState('');
+    const [salariototal, setSalarioTotal] = useState('');
+    const [dono, setDono] = useState('');
+
+    const handleSignupJogador = (event) => {
+      event.preventDefault()
+      console.log({nome, idade, contrato, camisa, peso, salario, altura})
+    }
+
+    const handleSignupTime = (event) => {
+      event.preventDefault()
+      console.log({nometime, anotime, verba, cadastrados, salariototal, dono})
+    }
+
 
     return(
       <div className="app">
@@ -153,24 +178,27 @@ function Admin() {
             </TabPane>
           </TabContent>
 
-          <Modal isOpen={jogadores} toggle={showJogadores} backdrop={'static'} scrollable={true} size={"lg"}>
+          --
+          <Modal isOpen={jogadores} toggle={showJogadores} backdrop={'static'} scrollable={true} size={"l 121g"}>
             <ModalHeader toggle={showJogadores}>
             <h1>Cadastro de Jogadores</h1>
             </ModalHeader>
             <ModalBody>
               <h2><span>Dados jogador</span></h2>
-              <Form>
+              <Form method="post" id="insert_data" onSubmit={handleSignupJogador}>
                 <div class="row cadastro">
                   <div class="col-8">
                     <FormGroup>
-                      <Label for="exampleEmail">
+                      <Label>
                         Nome
                       </Label>
                       <Input
-                        id="exampleEmail"
-                        name="email"
-                        placeholder="with a placeholder"
-                        type="email"
+                        name="nome"
+                        placeholder="Nome"
+                        type="text"
+                        required
+                        value={nome}
+                        onChange={(event) => setNome(event.target.value)}
                       />
                     </FormGroup>
                   </div>
@@ -197,30 +225,86 @@ function Admin() {
                 <div class="row cadastro">
                   <div class="col-2">
                     <FormGroup>
-                      <Label for="exampleEmail">
+                      <Label>
                         Idade
                       </Label>
                       <Input
-                        id="exampleEmail"
-                        name="email"
-                        placeholder="with a placeholder"
-                        type="email"
+                        name="idade"
+                        placeholder="Idade"
+                        type="number"
+                        required
+                        value={idade}
+                        onChange={(event) => setIdade(event.target.value)}
                       />
                     </FormGroup>
                   </div>
                   <div class="col-3">
                     <FormGroup>
-                      <Label for="examplePassword">
+                      <Label>
+                        Contrato
+                      </Label>
+                      <div>
+                        <Input
+                          name="contrato"
+                          placeholder="Inicio do Contrato"
+                          type="number"
+                          required
+                          value={contrato}
+                          onChange={(event) => setContrato(event.target.value)}
+                        />
+                      </div>
+                    </FormGroup>
+                  </div>
+                  <div class="col-3">
+                    <FormGroup>
+                      <Label>
+                        Camisa
+                      </Label>
+                      <div>
+                        <Input
+                          name="camisa"
+                          placeholder="Camisa"
+                          type="number"
+                          required
+                          value={camisa}
+                          onChange={(event) => setCamisa(event.target.value)}
+                        />
+                      </div>
+                    </FormGroup>
+                  </div>
+                  <div class="col-3">
+                    <FormGroup>
+                      <Label>
                         Peso
                       </Label>
                       <div class="input-group">
                         <Input
-                          id="examplePassword"
-                          name="password"
-                          placeholder="password placeholder"
-                          type="password"
+                          name="peso"
+                          placeholder="Peso"
+                          type="number"
+                          required
+                          value={peso}
+                          onChange={(event) => setPeso(event.target.value)}
                         />
                         <span class="input-group-text">Kg</span>
+                      </div>
+                    </FormGroup>
+                  </div>
+                  <div class="col-3">
+                    <FormGroup>
+                      <Label>
+                        Salário
+                      </Label>
+                      <div class="input-group">
+                      <span class="input-group-text">R$</span>
+                        <Input
+                          name="salario"
+                          placeholder="Salario"
+                          type="number"
+                          required
+                          value={salario}
+                          onChange={(event) => setSalario(event.target.value)}
+                        />
                       </div>
                     </FormGroup>
                   </div>
@@ -231,10 +315,12 @@ function Admin() {
                       </Label>
                       <div class="input-group">
                         <Input
-                          id="examplePassword"
-                          name="password"
-                          placeholder="password placeholder"
-                          type="password"
+                          name="altura"
+                          placeholder="Altura"
+                          type="number"
+                          required
+                          value={altura}
+                          onChange={(event) => setAltura(event.target.value)}
                         />
                         <span class="input-group-text">m</span>
                       </div>
@@ -260,18 +346,20 @@ function Admin() {
             </ModalHeader>
             <ModalBody>
               <h2><span>Dados do time</span></h2>
-              <Form>
+              <Form onSubmit={handleSignupTime}>
                 <div class="row cadastro">
                   <div class="col-8">
                     <FormGroup>
-                      <Label for="exampleEmail">
+                      <Label>
                         Nome
                       </Label>
                       <Input
-                        id="exampleEmail"
-                        name="email"
-                        placeholder="with a placeholder"
-                        type="email"
+                        name="nometime"
+                        placeholder="Nome"
+                        type="text"
+                        required
+                        value={nometime}
+                        onChange={(event) => setNomeTime(event.target.value)}
                       />
                     </FormGroup>
                   </div>
@@ -298,14 +386,16 @@ function Admin() {
                 <div class="row cadastro">
                   <div class="col-3">
                     <FormGroup>
-                      <Label for="exampleEmail">
+                      <Label>
                         Ano de criação
                       </Label>
                       <Input
-                        id="exampleEmail"
-                        name="email"
-                        placeholder="with a placeholder"
-                        type="email"
+                        name="anotime"
+                        placeholder="Ano"
+                        type="number"
+                        required
+                        value={anotime}
+                        onChange={(event) => setAnoTime(event.target.value)}
                       />
                     </FormGroup>
                   </div>
@@ -335,16 +425,55 @@ function Admin() {
                   </div>
                   <div class="col-4 tex-start">
                     <FormGroup>
-                      <Label for="examplePassword">
+                      <Label>
                         Verba mensal
                       </Label>
                       <div class="input-group">
                         <span class="input-group-text">R$</span>
                         <Input
-                          id="examplePassword"
-                          name="password"
-                          placeholder="password placeholder"
-                          type="password"
+                          name="verba"
+                          placeholder="Verba"
+                          type="number"
+                          required
+                          value={verba} 
+                          onChange={(event) => setVerba(event.target.value)}
+                        />
+                      </div>
+                    </FormGroup>
+                  </div>
+
+                  <div class="col-4 tex-start">
+                    <FormGroup>
+                      <Label>
+                        Jogadores Cadastrados
+                      </Label>
+                      <div>
+                        <Input
+                          name="cadastrados"
+                          placeholder="Número de Jogadores"
+                          type="number"
+                          required
+                          value={cadastrados} 
+                          onChange={(event) => setCadastrados(event.target.value)}
+                        />
+                      </div>
+                    </FormGroup>
+                  </div>
+
+                  <div class="col-4 tex-start">
+                    <FormGroup>
+                      <Label>
+                        Salário dos Jogadores
+                      </Label>
+                      <div class="input-group">
+                        <span class="input-group-text">R$</span>
+                        <Input
+                          name="salariototal"
+                          placeholder="Salário Total"
+                          type="number"
+                          required
+                          value={salariototal}
+                          onChange={(event) => setSalarioTotal(event.target.value)}
                         />
                       </div>
                     </FormGroup>
@@ -354,14 +483,16 @@ function Admin() {
                 <div class="row cadastro">
                   <div class="col-6">
                     <FormGroup>
-                      <Label for="exampleEmail">
+                      <Label>
                         Dono
                       </Label>
                       <Input
-                        id="exampleEmail"
-                        name="email"
-                        placeholder="with a placeholder"
-                        type="email"
+                        name="dono"
+                        placeholder="Dono"
+                        type="text"
+                        required
+                        value={dono}
+                        onChange={(event) => setDono(event.target.value)}
                       />
                     </FormGroup>
                   </div>
@@ -405,6 +536,7 @@ function Admin() {
 
         </div>
       </div>
+
     )
 }
 
