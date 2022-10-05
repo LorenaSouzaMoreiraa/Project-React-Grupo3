@@ -15,6 +15,10 @@ import { Modal,
 import Header from "../../components/Header";
 import classnames from 'classnames';
 import "./admin.css"
+import { allJogadores } from '../../database/jogadores';
+import { allTimes, id_Time, jogador_times, times_jogadores } from '../../database/time';
+import TableJogadores from '../../components/TableJogador';
+import TableTime from '../../components/TableTime';
 
 //import {nameJogador} from '../../database/jogadores';
 
@@ -65,6 +69,9 @@ function Admin() {
         </div>
     )
     */
+
+    const [datajogadores, setDatajogadores] = useState(allJogadores());
+    const [dataTimes, setDataTimes] = useState(allTimes());
 
     const [jogadores, setJogadores] = useState(false);
     const [times, setTimes] = useState(false);
@@ -162,6 +169,7 @@ function Admin() {
                   <i class="ri-2x ri-filter-2-fill"></i>
                 </div>
               </div>
+              <TableJogadores data={datajogadores}></TableJogadores>
             </TabPane>
             <TabPane tabId="2">
               <div class="row ">
@@ -180,6 +188,7 @@ function Admin() {
                   <i class="ri-2x ri-filter-2-fill"></i>
                 </div>
               </div>
+                <TableTime data={allTimes()}></TableTime>
             </TabPane>
           </TabContent>
 
@@ -285,9 +294,13 @@ function Admin() {
                   </div>
 
                   <h2><span>Times do jogador</span></h2>
-                
-                  <div class="btn-modal text-end align-self-center">
-                      <button onClick={showJogadores} type="button" data-toggle="modal" data-target="#cadastro" class="border-0 text-uppercase mb-2 shadow-sm">+ Adicionar</button>
+                  <div class="row">
+                    <div class="btn-modal text-end align-self-center">
+                        <button onClick={showJogadores} type="button" data-toggle="modal" data-target="#cadastro" class="border-0 text-uppercase mb-2 shadow-sm">+ Adicionar</button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <TableTime data={jogador_times(0)}></TableTime>
                   </div>
               </Form>
             </ModalBody>
@@ -442,11 +455,16 @@ function Admin() {
                 </div>
 
                 <h2><span>Jogadores do time</span></h2>
-                
-                <div class="btn-modal text-end align-self-center">
-                    <button onClick={showTimes} type="button" data-toggle="modal" data-target="#cadastro" class="border-0 text-uppercase mb-2 shadow-sm">+ Adicionar</button>
+                <div class="row">
+                  <div class="btn-modal text-end align-self-center">
+                      <button onClick={showTimes} type="button" data-toggle="modal" data-target="#cadastro" class="border-0 text-uppercase mb-2 shadow-sm">+ Adicionar</button>
+                  </div>
+                </div>
+                <div class="row">
+                  <TableJogadores data={times_jogadores(1)}></TableJogadores>
                 </div>
               </Form>
+
             </ModalBody>
           </Modal>
 
