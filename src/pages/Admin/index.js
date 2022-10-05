@@ -95,27 +95,38 @@ function Admin() {
 
     const [nome, setNome] = useState('');
     const [idade, setIdade] = useState('');
-    const [contrato, setContrato] = useState('');
-    const [camisa, setCamisa] = useState('');
     const [peso, setPeso] = useState('');
-    const [salario, setSalario] = useState('');
     const [altura, setAltura] = useState('');
 
     const [nometime, setNomeTime] = useState('');
     const [anotime, setAnoTime] = useState('');
     const [verba, setVerba] = useState('');
-    const [cadastrados, setCadastrados] = useState('');
-    const [salariototal, setSalarioTotal] = useState('');
     const [dono, setDono] = useState('');
 
     const handleSignupJogador = (event) => {
       event.preventDefault()
-      console.log({nome, idade, contrato, camisa, peso, salario, altura})
+      console.log({nome, idade, peso, salario, altura})
+
+      let emptyValues = Object.values(Form).some(obj => obj == "");
+      SetEmptyValue(emptyValues)
+
+      if(!emptyValues){
+        fetch("http://localhost:3000/admin", {method: "POST", body: JSON.stringify(Form)})
+        event.currentTarget.submit()
+      }
     }
 
     const handleSignupTime = (event) => {
       event.preventDefault()
-      console.log({nometime, anotime, verba, cadastrados, salariototal, dono})
+      console.log({nometime, anotime, verba, dono})
+
+      let emptyValues = Object.values(Form).some(obj => obj == "");
+      SetEmptyValue(emptyValues)
+
+      if(!emptyValues){
+        fetch("http://localhost:3000/admin", {method: "POST", body: JSON.stringify(Form)})
+        event.currentTarget.submit()
+      }
     }
 
 
@@ -192,7 +203,6 @@ function Admin() {
             </TabPane>
           </TabContent>
 
-          --
           <Modal isOpen={jogadores} toggle={showJogadores} backdrop={'static'} scrollable={true} size={"lg"}>
             <ModalHeader toggle={showJogadores}>
             <h1>Cadastro de Jogadores</h1>
@@ -214,6 +224,7 @@ function Admin() {
                           value={nome}
                           onChange={(event) => setNome(event.target.value)}
                         />
+                        { emptyValue && Form["nome"] == "" ? <span className="emptytext">O Nome é Obrigatório </span> : "" }
                       </FormGroup>
                     </div>
                     <div class="col-4 file">
@@ -250,6 +261,7 @@ function Admin() {
                           value={idade}
                           onChange={(event) => setIdade(event.target.value)}
                         />
+                        { emptyValue && Form["idade"] == "" ? <span className="emptynumber">A Idade é Obrigatória </span> : "" } 
                       </FormGroup>
                     </div>
                     <div class="col-3">
@@ -266,6 +278,7 @@ function Admin() {
                             value={peso}
                             onChange={(event) => setPeso(event.target.value)}
                           />
+                          { emptyValue && Form["peso"] == "" ? <span className="emptynumber">O Peso é Obrigatório </span> : "" }
                           <span class="input-group-text">Kg</span>
                         </div>
                       </FormGroup>
@@ -284,6 +297,7 @@ function Admin() {
                             value={altura}
                             onChange={(event) => setAltura(event.target.value)}
                           />
+                          { emptyValue && Form["altura"] == "" ? <span className="emptynumber">A Altura é Obrigatória </span> : "" }
                           <span class="input-group-text">m</span>
                         </div>
                       </FormGroup>
@@ -327,6 +341,7 @@ function Admin() {
                         value={nometime}
                         onChange={(event) => setNomeTime(event.target.value)}
                       />
+                      { emptyValue && Form["nometime"] == "" ? <span className="emptytext">O Nome do Time é Obrigatório </span> : "" }
                     </FormGroup>
                   </div>
                   <div class="col-4 file">
@@ -363,6 +378,7 @@ function Admin() {
                         value={anotime}
                         onChange={(event) => setAnoTime(event.target.value)}
                       />
+                      { emptyValue && Form["anotime"] == "" ? <span className="emptynumber">O Ano de Criação é Obrigatório </span> : "" }
                     </FormGroup>
                   </div>
                   <div class="col-5">
@@ -386,6 +402,7 @@ function Admin() {
                             })
                         };    
                         </Input>
+                        { emptyValue && Form["cidade"] == "" ? <span className="emptyselect">A Cidade de Origem é Obrigatória </span> : "" }
                       </div>    
                     </FormGroup>
                   </div>
@@ -404,6 +421,7 @@ function Admin() {
                           value={verba} 
                           onChange={(event) => setVerba(event.target.value)}
                         />
+                        { emptyValue && Form["verba"] == "" ? <span className="emptynumber">A Verba Mensal é Obrigatória </span> : "" }
                       </div>
                     </FormGroup>
                   </div>
@@ -423,6 +441,7 @@ function Admin() {
                         value={dono}
                         onChange={(event) => setDono(event.target.value)}
                       />
+                      { emptyValue && Form["dono"] == "" ? <span className="emptytext">O Nome Dono do Time é Obrigatório </span> : "" }
                     </FormGroup>
                   </div>
                   <div class="col-3">
@@ -446,6 +465,7 @@ function Admin() {
                             })
                           };                          
                         </Input>
+                        { emptyValue && Form["esporte"] == "" ? <span className="emptyselect">O Esporte é Obrigatório </span> : "" }
                       </div>
                     </FormGroup>
                   </div>
