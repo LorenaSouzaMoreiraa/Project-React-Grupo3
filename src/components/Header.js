@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import 'remixicon/fonts/remixicon.css'
 import './header.css'
 
@@ -15,7 +16,7 @@ export default function Header(){
         </li>
       </ul>
       <div class="navbar-text header px-3 text-end">
-        <i class="ri-2x ri-login-box-fill" width="50" height="50"></i>
+        <Link to ="/login"><i class="ri-2x ri-login-box-fill" width="50" height="50"></i></Link>
       </div>
     </nav>
   );

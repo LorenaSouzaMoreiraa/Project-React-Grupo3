@@ -6,7 +6,7 @@ function Home () {
     return(
     <div className="app">
         <h1>Página Inicial</h1>
-        <Link to ="/admin"><button > Clique aqui</button></Link>
+        <Link to ="/login"><button > Clique aqui</button></Link>
     </div>
     )
 }

@@ -1,6 +1,7 @@
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
 import * as React from 'react';
+import './table.css'
 
 function TableJogadores(data) {
   var rows = data.data;
@@ -81,7 +82,7 @@ function TableJogadores(data) {
           </TableBody>
         </Table>
       </TableContainer> */
-      <div style={{ height: 475, width: '100%' }}>
+      <div style={{ height: 475, width: '100%', margin:5, }}>
         <DataGrid
           rows={rows}
           columns={headCells}

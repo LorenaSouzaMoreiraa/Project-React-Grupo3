@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './login.css';
 
 function Login () {
@@ -25,7 +26,7 @@ function Login () {
                                             <label for="floatingInput">Password</label>
                                             <input id="inputPassword" type="password" placeholder="........." required="" class="form-control"/>
                                         </div>
-                                        <button type="submit" class=" btn-block border-0 text-uppercase mb-2 shadow-sm">Entrar</button>
+                                        <Link to ="/admin"><button type="submit" class=" btn-block border-0 text-uppercase mb-2 shadow-sm">Entrar</button></Link>
                                     </form>
                                 </div>
                             </div>
