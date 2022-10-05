@@ -18,7 +18,7 @@ export function nameJogador(name){
     return correspondencias;
 }
 
-export function idJogador(id){
+export function id_Jogador(id){
     for(var i = 0; i < data.length; i++)
         if(data[i].id === id  && data[i].ativo )
             return data[i];

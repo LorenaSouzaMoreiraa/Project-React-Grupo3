@@ -15,7 +15,6 @@ import { Modal,
 import Header from "../../components/Header";
 import classnames from 'classnames';
 import "./admin.css"
-import DataTable from '../../components/Table';
 
 //import {nameJogador} from '../../database/jogadores';
 
@@ -163,7 +162,6 @@ function Admin() {
                   <i class="ri-2x ri-filter-2-fill"></i>
                 </div>
               </div>
-              <DataTable type={1}></DataTable>
             </TabPane>
             <TabPane tabId="2">
               <div class="row ">
@@ -186,7 +184,7 @@ function Admin() {
           </TabContent>
 
           --
-          <Modal isOpen={jogadores} toggle={showJogadores} backdrop={'static'} scrollable={true} size={"l 121g"}>
+          <Modal isOpen={jogadores} toggle={showJogadores} backdrop={'static'} scrollable={true} size={"lg"}>
             <ModalHeader toggle={showJogadores}>
             <h1>Cadastro de Jogadores</h1>
             </ModalHeader>
@@ -248,40 +246,6 @@ function Admin() {
                     <div class="col-3">
                       <FormGroup>
                         <Label>
-                          Contrato
-                        </Label>
-                        <div>
-                          <Input
-                            name="contrato"
-                            placeholder="Inicio do Contrato"
-                            type="number"
-                            required
-                            value={contrato}
-                            onChange={(event) => setContrato(event.target.value)}
-                          />
-                        </div>
-                      </FormGroup>
-                    </div>
-                    <div class="col-3">
-                      <FormGroup>
-                        <Label>
-                          Camisa
-                        </Label>
-                        <div>
-                          <Input
-                            name="camisa"
-                            placeholder="Camisa"
-                            type="number"
-                            required
-                            value={camisa}
-                            onChange={(event) => setCamisa(event.target.value)}
-                          />
-                        </div>
-                      </FormGroup>
-                    </div>
-                    <div class="col-3">
-                      <FormGroup>
-                        <Label>
                           Peso
                         </Label>
                         <div class="input-group">
@@ -294,24 +258,6 @@ function Admin() {
                             onChange={(event) => setPeso(event.target.value)}
                           />
                           <span class="input-group-text">Kg</span>
-                        </div>
-                      </FormGroup>
-                    </div>
-                    <div class="col-3">
-                      <FormGroup>
-                        <Label>
-                          Salário
-                        </Label>
-                        <div class="input-group">
-                        <span class="input-group-text">R$</span>
-                          <Input
-                            name="salario"
-                            placeholder="Salario"
-                            type="number"
-                            required
-                            value={salario}
-                            onChange={(event) => setSalario(event.target.value)}
-                          />
                         </div>
                       </FormGroup>
                     </div>
@@ -444,43 +390,6 @@ function Admin() {
                           required
                           value={verba} 
                           onChange={(event) => setVerba(event.target.value)}
-                        />
-                      </div>
-                    </FormGroup>
-                  </div>
-
-                  <div class="col-4 tex-start">
-                    <FormGroup>
-                      <Label>
-                        Jogadores Cadastrados
-                      </Label>
-                      <div>
-                        <Input
-                          name="cadastrados"
-                          placeholder="Número de Jogadores"
-                          type="number"
-                          required
-                          value={cadastrados} 
-                          onChange={(event) => setCadastrados(event.target.value)}
-                        />
-                      </div>
-                    </FormGroup>
-                  </div>
-
-                  <div class="col-4 tex-start">
-                    <FormGroup>
-                      <Label>
-                        Salário dos Jogadores
-                      </Label>
-                      <div class="input-group">
-                        <span class="input-group-text">R$</span>
-                        <Input
-                          name="salariototal"
-                          placeholder="Salário Total"
-                          type="number"
-                          required
-                          value={salariototal}
-                          onChange={(event) => setSalarioTotal(event.target.value)}
                         />
                       </div>
                     </FormGroup>
