@@ -1,72 +1,110 @@
-# Getting Started with Create React App
+# Grupo 3
+*Lorena Souza Moreira & Marco Antônio Dias Cunha*
 
-[Começando com React](https://developer.mozilla.org/pt-BR/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started)
+## Resumo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Gerenciamento de times no qual é necessário criar uma lista de times,
+cada um com uma lista de jogadores. 
 
-## Available Scripts
+    1. Crud de Times
+        - Nome;
+        - Ano de criação;
+        - Esporte;
+        - Dono;
+        - Verba mensal recebida;
+        - Cidade de origem;
+        - Quantidade de jogadores cadastrados;
+        - Total de salários dos jogadores;
 
-In the project directory, you can run:
+    2. Crud de Jogador
+        - Nome;
+        - Idade;
+        - Ano que entrou no time;
+        - Número da camisa;
+        - Peso;
+        - Altura;
+        - Salário
 
-### `npm start`
+    3. Gerenciamento
+        - Criar time;
+        - Criar/adicionar jogador;
+        - Apagar time;
+        - Apagar jogador;
+        - Alterar dados de um time;
+        - Alterar dados de um jogador;
+        - Extra: buscar jogador
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Cronograma
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Data   | Desenvolvimento
+--------- | ------
+05/09 | - Reunião geral de apresentação do desafio com a diretoria e o "cliente"
+07/09 | - Criação do repósitorio no Github e iniciação do projeto React
+09/09 | - Reunião com todos os membros do grupo, dicussão de do projeto e divisão de tarefas.  
+12/09 | - Envio de convites para todos os membros do grupo
+12 a 19/09 | - Tentativas de contato do cliente e perguntas sobre a identidade visual ao mesmo
+20 a 31/09| - Saída dos membros Debóra e Gustavo, gerente de projeto
+01 a 05| - Saída do membro Ramon e comunicação ao orientador, André, da situação do grupo.
 
-### `npm test`
+### Divisão inicial de tarefas
+Membro   | Tarefa
+--------- | ------
+Gustavo | Front-end do time (Criação do formulário e validação dos campos)
+Marco | Back-end do time (funções de CRUD)
+Débora | Front-end do jogador (Criação do formulário e validação dos campos)
+Ramom | Back-end do jogador (funções de CRUD)
+Lorena | Criação do arquivo json, tabela de listagem de jogadores e times 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Achavamos que ainda seria necessário criar uma pagina home em html e css com o relatório, por isso está no repositório, mas depois de conversar com o orientador foi excluído a necessidade do mesmo podendo ser realizado no README.md
 
-### `npm run build`
+### Desenvolvimento
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Não havia rumores de efetiva saída dos membros até a notificação dos mesmo de forma justificada no grupo, feito com dialógo e aviso aos membros com muito respeito. Contudo, foi uma saída tardia além da saída do próprio gerente. Então até a saída dos mesmo, a parte designada era dos mesmos não tendo menção dos outros membros a tomar esta responsabilidade para si, compreensível. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Desenvolvimento
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### Protótipos
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+O prototipo foi feito no Figma compartilhado com os membros. Foi feito pela integrante Lorena devido a saída dos outros. Clique [aqui]() para acessar o protótipo.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Tela de Login
+![Login](./public/assets/Desktop%20-%201.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+A proposta incial era ter um usuario padrão para barrar acesso aos formulários de cadastro. Sendo assim todos poderiam usar mas apenas usuários autenticados poderiam realizar alterações.
+  - Tela de listagem de jogadores e times 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+A mudança de conteúdo acontece atraves de tabs. As tabelas são componentes que recebem objetos objetos do tipo time e jogador. Isso ocorre pensando no futuro caso o botão de pesquisar funcione para passagem da filtragem de resultado.
+  
+![Jogadores](./public/assets/Desktop%20-%202.png)
 
-## Learn More
+![Times](./public/assets/Desktop%20-%203.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Os botões de adicionar novo vão para o formulário para registro do objeto, jogador e time, para o conteúdo da respectiva tab.
+![CRUD de jogador](./public/assets/Frame%201.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![CRUD de time](./public/assets/Frame%202.png)
 
-### Code Splitting
+O contrato de um time e jogador com as informações era pra surgir no botão adiconar no forms. O form tambem serviria pra edição já que ele seria povoado com as informações.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Tela 404
+  
+Tela para onde iria caso colocasse uma rota errada
+![404](./public/assets/Desktop%20-%204.png)
 
-### Analyzing the Bundle Size
+### "Banco de dados"
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Foi feito através de um arquivo json escrito a mão(db,json) que era consumido. As entidades são jogador, time, cidade, esportes e time_jogador(o contrato). Todos tem o campo ativo para verificar se o objeto foi deletado ou não. Além disso a linkagem entre as entidades é feito pelo através da id dos objetos.
 
-### Making a Progressive Web App
+As funções se encontram dentro da pasta database.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Conclusão
 
-### Advanced Configuration
+Por fim, muitas coisas ficaram estáticas (sendo consumidas do db.json), como o usuário que não pode ser autenticado.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+*Funções finais*
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Membro   | Função
+--------- | -----
+Lorena | Criação do repositório e arquivo json, desing no figma e criação das telas, Criação da tabelas de listagem e funções da mesma
+Marco | Formulário e validação de time e jogador
